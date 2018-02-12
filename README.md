@@ -7,7 +7,7 @@ oriented approach. The challenge lies in refactoring a deeply nested
 block of if else statement and add support for a new item type.
 
 The original design explicitly states that the item class is not allowed to be changed. However I wanted to 
-reimagine how the design could look like given free rein.
+reimagine how the design could look like given free reins.
 
 ## Compilation
 
