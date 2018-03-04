@@ -9,6 +9,38 @@ block of if else statement and add support for a new item type.
 The original design explicitly states that the item class is not allowed to be changed. However I wanted to 
 reimagine how the design could look like given free reins.
 
+In short, new items are defined by their attributes in [Data.coffee](src/Data.coffee) which is acted upon by [Logic.coffee](src/Logic.coffee). 
+This makes it very flexible to make adjustments or to add new items, as well as adding new logic and attributes.
+
+Example of defining items:
+```
+  sulfuras:
+    name: "Sulfuras, Hand of Ragnaros"
+    quality: 80
+    
+  vest:
+    name: "+5 Dexterity Vest"
+    quality: 20
+    daysLeft: 10
+    degrade: true
+
+  brie:
+    name: "Aged Brie"
+    quality: 0
+    daysLeft: 2
+    improveWithTime:
+      max: 50
+
+  ticket:
+    name: "Backstage passes to a TAFKAL80ETC concert"
+    quality: 20
+    daysLeft: 15
+    improveWithTime:
+      max: 50,
+      tiers: [10, 5]
+    expire: true
+```
+
 ## Compilation
 
 Written in [CoffeeScript][coffee] with [NodeJS][nodejs] and [Mocha][mocha].
